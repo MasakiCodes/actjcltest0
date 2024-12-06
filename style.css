@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #AFDDE5;
+    background-color: #f9f9f9;
     margin: 0;
 }
 
@@ -216,7 +216,17 @@ ul {
     margin-bottom: 20px;
     text-align: center;
     font-family: system-ui, sans-serif;
+    border-top: 2px solid #ffcc00;
+    padding-top: 20px;
 }
+
+.completedcompetitions {
+    border-top: 2px solid #ffcc00;
+    margin-top: 70px;
+    padding-top: 20px;
+    font-family: system-ui, sans-serif;
+}
+
 
 .blog {
     padding: 20px;
@@ -255,4 +265,123 @@ ul {
 .blog-post:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.testimonials {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #ffcc00;
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+}
+
+.testimonial p {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.testimonial span {
+    font-weight: bold;
+    font-size: 14px;
+    color: #777;
+}
+
+.testimonial::before {
+    content: "“";
+    font-size: 40px;
+    color: #ffcc00;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+.testimonial::after {
+    content: "”";
+    font-size: 40px;
+    color: #ffcc00;
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+}
+
+.features h1 {
+    text-align: center;
+    font-size: 28px;
+    font-family: system-ui, sans-serif;
+}
+
+.features {
+    margin-top: 40px;
+}
+
+.features {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(25% - 20px); /* Adjusts for 4 items per row */
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature i {
+    font-size: 40px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
 }
