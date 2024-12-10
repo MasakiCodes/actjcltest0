@@ -261,7 +261,7 @@ ul {
 }
 
 .blog-post:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -300,7 +300,7 @@ ul {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: calc(25% - 20px); /* Adjusts for 4 items per row */
+    width: calc(25% - 20px);
     min-width: 250px;
     text-align: center;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s;
