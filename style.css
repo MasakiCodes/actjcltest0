@@ -214,12 +214,10 @@ ul {
     margin-bottom: 20px;
     text-align: center;
     font-family: system-ui, sans-serif;
-    border-top: 2px solid #ffcc00;
     padding-top: 20px;
 }
 
 .completedcompetitions {
-    border-top: 2px solid #ffcc00;
     margin-top: 70px;
     padding-top: 20px;
     font-family: system-ui, sans-serif;
@@ -335,7 +333,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: #8697C4;
+    background: linear-gradient(90deg, #8697C4, #6387d4);
     color: #FFF;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
