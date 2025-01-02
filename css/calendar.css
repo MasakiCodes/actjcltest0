@@ -1,0 +1,60 @@
+.title {
+    margin-bottom: 50px;
+    font-family: 'Bebas Neue';
+    text-align: center;
+    padding-top: 50px;
+    font-size: 3rem;
+}
+
+.calendar-container {
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.month-header {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #444444;
+    font-size: 1.2rem;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+
+.month-content {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+}
+
+.event-title {
+    font-weight: bold;
+}
+
+.event {
+    background: #fefefe;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 12px;
+    border-left: 4px solid #4ecc14;
+}
+
+.event:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.event-title {
+    font-weight: bold;
+}
+
+.event-link {
+    text-decoration: none;
+}
