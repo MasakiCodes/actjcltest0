@@ -1,0 +1,72 @@
+.membership-header {
+    text-align: center;
+    padding: 40px 20px;
+    color: #2c3e50;
+    margin-bottom: 0;
+}
+.membership-header h1 {
+    margin-bottom: 20px;
+    font-family: 'Bebas Neue';
+    font-size: 3em;
+}
+
+
+
+.benefits h1 {
+    text-align: center;
+    font-size: 28px;
+    font-family: system-ui, sans-serif;
+}
+
+
+.benefits {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+.benefits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.benefit {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(25% - 20px);
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    display: flex;
+}
+
+.benefit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature i {
+    font-size: 40px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.benefit h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.benefit p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
