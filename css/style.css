@@ -117,8 +117,12 @@
     min-width: 250px;
     text-align: center;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
     display: flex;
 }
+
 
 .feature:hover {
     transform: scale(1.05);
@@ -129,6 +133,7 @@
     font-size: 40px;
     color: #ffcc00;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .feature h3 {

@@ -45,6 +45,9 @@
     text-align: center;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s;
     display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
 }
 
 .benefit:hover {
