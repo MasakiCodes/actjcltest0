@@ -1,7 +1,7 @@
 .membership-header {
     text-align: center;
     padding: 40px 20px;
-    color: #2c3e50;
+    color: #000;
     margin-bottom: 0;
 }
 .membership-header h1 {
@@ -15,7 +15,9 @@
 .benefits h1 {
     text-align: center;
     font-size: 28px;
-    font-family: system-ui, sans-serif;
+    font-family: 'Bebas Neue';
+    font-size: 3em;
+    color: #000;
 }
 
 
