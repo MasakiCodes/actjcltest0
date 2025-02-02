@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require("path");
+
 const app = express();
 const fetchContent = require('./serverside_js/fetch_content'); // Import the script
 
@@ -11,6 +13,8 @@ app.use('/assets', express.static('assets'));
 
 // Serve 'html' as the root folder for your HTML files
 app.use(express.static('html'));
+app.use("/html", express.static(path.join(__dirname, "html")));
+
 
 // Endpoint to fetch content dynamically
 app.get('/api/events', async (req, res) => {
