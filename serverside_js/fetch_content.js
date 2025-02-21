@@ -1,20 +1,36 @@
+// serverside_js/fetch_content.js
 const contentful = require('contentful');
+const { contentfulConfig } = require('../js/config'); // Correct relative path
 
 // Initialize Contentful client
 const client = contentful.createClient({
-  space: 'wkknt9k70bzv',
-  accessToken: 'PylOe0WWUDfc5C2VpkJ00GMtas3yBpd0OoOWU5Q7v48',
+    space: contentfulConfig.space,
+    accessToken: contentfulConfig.accessToken,
 });
 
-// Function to fetch content
-async function fetchContent(contentType) {
-  try {
-    const entries = await client.getEntries({ content_type: contentType });
-    return entries.items.map((item) => item.fields);
-  } catch (error) {
-    console.error('Error fetching content:', error);
-    throw error;
-  }
+// Function to fetch events
+async function fetchEvents() {
+    try {
+        const entries = await client.getEntries({ content_type: 'events' });
+        return entries.items.map(item => item.fields);
+    } catch (error) {
+        console.error('Error fetching events:', error);
+        throw error;
+    }
 }
 
-module.exports = fetchContent;
+// Function to fetch school dates
+async function fetchSchoolDates() {
+    try {
+        const entries = await client.getEntries({ content_type: 'schoolDates' });
+        return entries.items.map(item => item.fields);
+    } catch (error) {
+        console.error('Error fetching school dates:', error);
+        throw error;
+    }
+}
+
+module.exports = {
+    fetchEvents,
+    fetchSchoolDates
+};

@@ -1,66 +1,75 @@
-const calendarContainer = document.getElementById('calendarContainer');
-const viewSwitch = document.getElementById('viewSwitch');
-const upcomingTemplate = document.getElementById('event-template1');
+// js/calendar.js
+import { processEvents, mapTermDates, filterEventsToMonths, loadAllEvents } from './eventUtils.js';
+import { renderCalendar } from './calendarRenderer.js';
 
-// Ensure the template exists before proceeding
-if (!upcomingTemplate) {
-    console.error("Event template not found. Ensure 'event-template1' exists in the HTML.");
+async function fetchData(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch ${url}: ${response.status}`);
+    }
+    return await response.json();
 }
 
-// Function to format date as "Tuesday, January 21, 2025, 5:00 PM"
-function formatFullDate(isoString) {
-    if (!isoString) return "TBA";
-    const date = new Date(isoString);
-    return new Intl.DateTimeFormat("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true
-    }).format(date);
+async function init() {
+    let allEvents = []; // Store all processed events here.  This is crucial!
+    let termDates = [];
+
+    try {
+        const events = await fetchData('/api/events');
+        const schoolDates = await fetchData('/api/schoolDates');
+        allEvents = processEvents(events);  // Store the full set.
+        termDates = mapTermDates(schoolDates);
+        const sixMonthsEvents = filterEventsToMonths(allEvents, 6);
+
+        const calendarContainer = document.getElementById('calendarContainer');
+        const viewSwitch = document.getElementById('viewSwitch');
+        const viewLabel = document.getElementById('view-label');
+        const monthTemplate = document.getElementById('month-template');
+        const termTemplate = document.getElementById('term-template');
+        const eventTemplate = document.getElementById('event-template');
+
+        // Check if templates are found
+        if (!monthTemplate || !termTemplate || !eventTemplate) {
+            console.error("One or more templates not found. Ensure they exist in the HTML.");
+        }
+
+        const templates = { monthTemplate, termTemplate, eventTemplate };
+        let currentlyDisplayedEvents = sixMonthsEvents;
+
+        // Initial render (default to month view)
+        renderCalendar(currentlyDisplayedEvents, termDates, "month", calendarContainer, templates);
+
+        // Create a styled "Load More Events" button
+        const loadMoreButton = document.createElement('button');
+        loadMoreButton.textContent = 'Load More Events';
+        loadMoreButton.id = "load-more-btn";
+        loadMoreButton.classList.add('styled-load-more'); // Add a class for styling
+        loadMoreButton.addEventListener('click', () => {
+            currentlyDisplayedEvents = allEvents; // Update to show all
+            renderCalendar(currentlyDisplayedEvents, termDates, viewSwitch.checked ? "term" : "month", calendarContainer, templates);
+            loadMoreButton.style.display = 'none'; // Hide button
+        });
+
+        // Append the button after the calendar
+        calendarContainer.after(loadMoreButton);
+
+        // Toggle View Mode
+        viewSwitch.addEventListener('change', () => {
+            const viewType = viewSwitch.checked ? "term" : "month";
+            viewLabel.innerText = viewSwitch.checked ? "Switch to Month View" : "Switch to Term View";
+             // Use allEvents here!
+            renderCalendar(currentlyDisplayedEvents, termDates, viewType, calendarContainer, templates);
+        });
+
+    } catch (error) {
+        console.error("Initialization failed:", error);
+
+        // Display user-friendly error message
+        const errorDiv = document.createElement('div');
+        errorDiv.textContent = "Failed to load calendar data. Please try again later.";
+        errorDiv.style.color = 'red';
+        document.querySelector('main').prepend(errorDiv);
+    }
 }
 
-// Fetch upcoming event data from Contentful API
-fetch('/api/events')
-    .then(response => response.json())
-    .then(events => {
-        const now = new Date();
-        let upcomingEvents = events.filter(event => {
-            return true; // Only include events that haven't started yet
-        });
-
-        // Clear the calendar container before populating
-        calendarContainer.innerHTML = "";
-
-        // Populate Upcoming Events
-        upcomingEvents.forEach(event => {
-            console.log(event)
-            let newEvent = upcomingTemplate.content.cloneNode(true);
-            let eventDiv = newEvent.querySelector('.event');
-
-            if (!eventDiv) {
-                console.error("Event structure missing in template.");
-                return;
-            }
-
-            let dateDisplay = formatFullDate(event.startDate);
-            if (event.endDate) {
-                dateDisplay += ` - ${formatFullDate(event.endDate)}`;
-            }
-
-            eventDiv.querySelector(".event-title").innerText = event.title || "Upcoming Event";
-            eventDiv.querySelector(".event-date").innerText = dateDisplay;
-            eventDiv.querySelector(".event-description").innerText = event.description || "Details coming soon.";
-
-            let link = eventDiv.querySelector(".event-link");
-            if (link) {
-                link.innerHTML = event.bookingLink ? `<a target="_blank" href="${event.bookingLink}">Booking Link</a>` : "No booking link available";
-            }
-
-            calendarContainer.appendChild(newEvent);
-        });
-
-    })
-    .catch(error => console.error("Error fetching events:", error));
+document.addEventListener('DOMContentLoaded', init);

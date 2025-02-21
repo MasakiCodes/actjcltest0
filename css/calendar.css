@@ -113,3 +113,69 @@ input:checked + .slider:before {
     font-weight: 500;
     color: #333;
 }
+
+/* Term View Styles */
+.calendar-term {
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Match container rounding */
+    margin: 16px auto; /* Center and add margin */
+    padding: 0; /* Remove padding, handled by inner elements */
+    width: 95%; /* Adjust width as needed */
+    max-width: 800px; /* Match calendar-container max-width */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Match container shadow */
+    background-color: #f9f9f9; /* Match container background */
+}
+
+.term-header {
+    color: #fff; /* Match month-header text color */
+    border-radius: 5px; /* Match month-header rounding */
+    background-color: #444444; /* Match month-header background */
+    font-size: 1.2rem; /* Match month-header font size */
+    padding: 12px 16px; /* Match month-header padding */
+    margin-bottom: 8px; /* Match month-header margin */
+    text-align: center; /* Center the term title */
+}
+
+.term-header h2 {
+    font-size: 1.3rem; /* Slightly larger font for term headers */
+    margin: 0; /* Remove default h2 margin */
+    font-weight: bold; /* Make term titles bold */
+}
+
+.term-content {
+    padding: 16px; /* Match month-content padding */
+    background-color: #fff; /* Match month-content background */
+    border-radius: 5px; /* Match month-content rounding */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Match month-content shadow */
+    margin-bottom: 16px; /* Match month-content margin */
+}
+
+/* Ensure events inside terms look the same */
+.term-content .event {
+    margin-bottom: 12px; /* Match existing event margin */
+}
+
+/* Styled Load More Events Button */
+.styled-load-more {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.styled-load-more:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.styled-load-more:active {
+    transform: scale(1);
+}

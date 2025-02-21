@@ -20,7 +20,7 @@
                 <input type="checkbox" id="viewSwitch">
                 <span class="slider round"></span>
             </label>
-            <span class="toggle-label">Switch to Term View</span>
+            <span class="toggle-label" id="view-label">Switch to Term View</span>
         </div>
         
 
@@ -35,7 +35,29 @@
     <script src="../js/footer.js"></script>
 
     <!-- Templates for dynamic event loading -->
-    <template id="event-template1">
+    <template id="month-template">
+        <div class="calendar-month">
+            <div class="month-header">
+                <h2></h2>
+            </div>
+            <div class="month-content">
+                <!-- Events will be added here -->
+            </div>
+        </div>
+    </template>
+
+    <template id="term-template">
+        <div class="calendar-term">
+            <div class="term-header">
+                <h2></h2>
+            </div>
+            <div class="term-content">
+                <!-- Events will be added here -->
+            </div>
+        </div>
+    </template>
+
+    <template id="event-template">
         <div class="event">
             <p class="event-title"></p>
             <p class="event-date"></p>
@@ -46,6 +68,6 @@
     
     
 
-    <script src="../js/calendar.js"></script>
+    <script type="module" src="../js/calendar.js"></script>
 </body>
 </html>
