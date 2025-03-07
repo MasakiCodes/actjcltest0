@@ -1,3 +1,9 @@
+@font-face {
+    font-family: customfont;
+    src: url(../assets/font-files/scotchmodern_bold.otf);
+}
+
+
 .results {
     padding: 20px;
     margin: 0 auto;
@@ -14,7 +20,10 @@
     text-align: center;
     margin-bottom: 20px;
     color: #4CAF50;
-    text-decoration: underline;
+    font-family: customfont;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-weight: bold;
 }
 
 .year-header, .month-header {

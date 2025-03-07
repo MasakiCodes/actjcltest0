@@ -1,13 +1,30 @@
+@font-face {
+    font-family: universcondensed;
+    src: url(../assets/font-files/universcondensed_bold.ttf);
+}
+
+
+
 .membership-header {
     text-align: center;
     padding: 40px 20px;
     color: #000;
     margin-bottom: 0;
+    line-height: 30px;
+    margin-top: 50px;
+    font-family: universcondensed;
 }
 .membership-header h1 {
     margin-bottom: 20px;
     font-family: 'Bebas Neue';
     font-size: 3em;
+}
+
+.membership-header p {
+    margin-top: 40px;
+    font-size: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 
@@ -18,6 +35,7 @@
     font-family: 'Bebas Neue';
     font-size: 3em;
     color: #000;
+    margin-bottom: 20px;
 }
 
 
@@ -25,7 +43,7 @@
     padding: 40px 20px;
     background: #f9f9f9;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 
@@ -74,4 +92,15 @@
     font-size: 16px;
     color: #555;
     line-height: 1.5;
+}
+
+.cta a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }

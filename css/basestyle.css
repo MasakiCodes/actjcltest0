@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -46,6 +46,7 @@ ul {
     width: 100px;
     vertical-align: middle;
     margin-right: 25px;
+    border-radius: 10px;
 }
 
 .nav-links {
@@ -120,16 +121,20 @@ ul {
 
 .footer-col:first-child {
     font-weight: bold;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 800;
 }
 
 .footer-col ul li a {
-    font-size: 16px;
+    font-size: 18px;
     text-transform: capitalize;
-    color: black;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
     display: block;
     transition: all 0.3s ease;
+    font-family: 'Source Sans 3','Bebas Neue';
+    font-weight: 900;
 }
 
 .footer-col ul li a:hover{
