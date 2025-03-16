@@ -1,5 +1,5 @@
 @font-face {
-    font-family: customfont;
+    font-family: scotchmodern;
     src: url(../assets/font-files/scotchmodern_bold.otf);
 }
 
@@ -20,7 +20,7 @@
     text-align: center;
     margin-bottom: 20px;
     color: #4CAF50;
-    font-family: customfont;
+    font-family: scotchmodern;
     margin-bottom: 30px;
     margin-top: 30px;
     font-weight: bold;

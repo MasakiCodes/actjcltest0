@@ -1,5 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Average&family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+@font-face {
+    font-family: bebasneue;
+    src: url(../assets/font-files/BebasNeue-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -38,7 +44,7 @@ ul {
 .logo {
     font-size: 3em;
     font-weight: bold;
-    font-family: Bebas Neue;
+    font-family: bebasneue;
     text-decoration: none;
 }
 
@@ -53,7 +59,7 @@ ul {
     list-style: none;
     display: flex;
     gap: 75px;
-    font-family: 'Bebas Neue';
+    font-family: bebasneue;
     font-size: 1.5em;
     display: inline-block;
 }
@@ -99,7 +105,7 @@ ul {
     color: white;
     text-transform: capitalize;
     margin-bottom: 35px;
-    font-family: "Bebas Neue";
+    font-family: bebasneue;
     font-weight: 500;
     position: relative;
 }
@@ -133,7 +139,7 @@ ul {
     font-weight: bold;
     display: block;
     transition: all 0.3s ease;
-    font-family: 'Source Sans 3','Bebas Neue';
+    font-family: 'Source Sans 3', bebasneue;
     font-weight: 900;
 }
 

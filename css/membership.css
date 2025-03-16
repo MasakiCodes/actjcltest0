@@ -3,6 +3,11 @@
     src: url(../assets/font-files/universcondensed_bold.ttf);
 }
 
+@font-face {
+    font-family: scotchmodern;
+    src: url(../assets/font-files/scotchmodern_bold.otf);
+}
+
 
 
 .membership-header {
@@ -12,7 +17,7 @@
     margin-bottom: 0;
     line-height: 30px;
     margin-top: 50px;
-    font-family: universcondensed;
+    font-family: scotchmodern;
 }
 .membership-header h1 {
     margin-bottom: 20px;
@@ -25,6 +30,7 @@
     font-size: 20px;
     padding-right: 50px;
     padding-left: 50px;
+    font-weight: 1200;
 }
 
 
