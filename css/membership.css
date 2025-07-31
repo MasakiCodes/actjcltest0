@@ -8,6 +8,11 @@
     src: url(../assets/font-files/scotchmodern_bold.otf);
 }
 
+@font-face {
+    font-family: bebasneue;
+    src: url(../assets/font-files/BebasNeue-Regular.ttf);
+}
+
 
 
 .membership-header {
@@ -17,7 +22,7 @@
     margin-bottom: 0;
     line-height: 30px;
     margin-top: 50px;
-    font-family: scotchmodern;
+    line-break: 10px;
 }
 .membership-header h1 {
     margin-bottom: 20px;
@@ -30,83 +35,140 @@
     font-size: 20px;
     padding-right: 50px;
     padding-left: 50px;
-    font-weight: 1200;
+    font-weight: 700;
 }
 
 
+
+/* Benefits Section */
+
+.benefits {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: black;
+    background-color: #f9f9f9;
+    background: #eef5ff
+}
 
 .benefits h1 {
     text-align: center;
-    font-size: 28px;
-    font-family: 'Bebas Neue';
-    font-size: 3em;
-    color: #000;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+    position: relative;
+
 }
 
-
-.benefits {
-    padding: 40px 20px;
-    background: #f9f9f9;
-    text-align: center;
-    margin-top: 30px;
+.benefits h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
 }
-
 
 .benefits-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .benefit {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: calc(25% - 20px);
-    min-width: 250px;
+    background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+    padding: 2rem;
+    border-radius: 15px;
     text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
 .benefit:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.feature i {
-    font-size: 40px;
-    color: #ffcc00;
-    margin-bottom: 15px;
+.benefit-icon {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 1rem;
 }
 
 .benefit h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     color: #333;
-    margin-bottom: 10px;
-    text-align: center;
 }
 
 .benefit p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.5;
+    color: #666;
+    line-height: 1.6;
 }
 
-.cta a {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+
+
+
+.footer {
+    margin-top: 100px;
+}
+
+.cta {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: black;
+    background-color: #f9f9f9;
+    background: #eef5ff
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.membership-link {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.membership-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    background: #f8f9ff;
+}
+
+.membership-link i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
 }
