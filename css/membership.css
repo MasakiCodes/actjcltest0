@@ -1,174 +1,217 @@
+/* Font faces */
 @font-face {
-    font-family: universcondensed;
+    font-family: 'universcondensed';
     src: url(../assets/font-files/universcondensed_bold.ttf);
 }
-
 @font-face {
-    font-family: scotchmodern;
+    font-family: 'scotchmodern';
     src: url(../assets/font-files/scotchmodern_bold.otf);
 }
-
 @font-face {
-    font-family: bebasneue;
+    font-family: 'bebasneue';
     src: url(../assets/font-files/BebasNeue-Regular.ttf);
 }
+@font-face {
+    font-family: 'inter';
+    src: url(../assets/font-files/Inter_24pt-Regular.ttf);
+}
 
+body {
+    font-family: 'inter', 'Source Sans 3', Arial, sans-serif;
+    background: #f9f9f9;
+    color: #222;
+}
 
-
-.membership-header {
+/* Hero Section */
+.membership-hero {
+    background: linear-gradient(90deg, #8697C4 0%, #6387d4 100%);
+    color: #fff;
+    padding: 80px 20px 60px 20px;
     text-align: center;
-    padding: 40px 20px;
-    color: #000;
-    margin-bottom: 0;
-    line-height: 30px;
-    margin-top: 50px;
-    line-break: 10px;
-}
-.membership-header h1 {
-    margin-bottom: 20px;
-    font-family: 'Bebas Neue';
-    font-size: 3em;
-}
-
-.membership-header p {
-    margin-top: 40px;
-    font-size: 20px;
-    padding-right: 50px;
-    padding-left: 50px;
-    font-weight: 700;
-}
-
-
-
-/* Benefits Section */
-
-.benefits {
-    padding: 4rem 2rem;
-    text-align: center;
-    color: black;
-    background-color: #f9f9f9;
-    background: #eef5ff
-}
-
-.benefits h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #333;
     position: relative;
-
 }
-
-.benefits h1::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 2px;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+.hero-content {
+    max-width: 700px;
     margin: 0 auto;
 }
-
-.benefit {
-    background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.membership-hero h1 {
+    font-family: 'bebasneue', Arial, sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.membership-hero p {
+    font-size: 1.3em;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+.hero-cta, .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    padding: 1.1rem 3rem;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s, color 0.2s, border-color 0.2s;
     position: relative;
     overflow: hidden;
 }
-
-.benefit::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+.hero-cta:hover, .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
 }
 
-.benefit:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+/* Benefits Section */
+.benefits-section {
+    background: #eef5ff;
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+}
+.benefits-section h2 {
+    font-family: 'bebasneue', Arial, sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+.benefits-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
+@media (min-width: 900px) {
+    .benefits-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .benefit-card.center-card {
+        grid-column: 2 / 3;
+    }
+}
+.benefit-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border-top: 5px solid #667eea;
+}
+.benefit-card:hover {
+    transform: translateY(-7px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.13);
+}
 .benefit-icon {
-    font-size: 3rem;
+    font-size: 2.7em;
     color: #667eea;
     margin-bottom: 1rem;
 }
-
-.benefit h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.benefit-card h3 {
+    font-family: 'bebasneue', Arial, sans-serif;
+    font-size: 1.4em;
+    margin-bottom: 0.7rem;
     color: #333;
 }
-
-.benefit p {
-    color: #666;
+.benefit-card p {
+    color: #555;
+    font-size: 1.05em;
     line-height: 1.6;
 }
 
-
-
-
-.footer {
-    margin-top: 100px;
-}
-
-.cta {
-    padding: 4rem 2rem;
+.membership-info {
+    background: #fff;
+    padding: 50px 20px 40px 20px;
     text-align: center;
-    color: black;
-    background-color: #f9f9f9;
-    background: #eef5ff
 }
-
-.cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+.membership-info h2 {
+    font-family: 'bebasneue', Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #333;
 }
-
-.cta p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+.membership-info ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
 }
-
-.membership-link {
-    display: inline-block;
-    background: white;
+.membership-info ul li {
+    font-size: 1.15em;
+    margin-bottom: 18px;
+    padding-left: 30px;
+    position: relative;
+    text-align: left;
+}
+.membership-info ul li:before {
+    content: '\f058';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     color: #667eea;
-    padding: 1rem 3rem;
-    margin-top: 2rem;
-    text-decoration: none;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.1em;
+}
+
+.cta-section {
+    background: linear-gradient(90deg, #8697C4 0%, #6387d4 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px 60px 20px;
+}
+.cta-section h2 {
+    font-family: 'bebasneue', Arial, sans-serif;
+    font-size: 2.3em;
+    margin-bottom: 18px;
+}
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+.cta-btn {
+    display: inline-block;
+    color: #fff;
+    padding: 1.1rem 3rem;
     border-radius: 50px;
+    font-size: 1.2em;
     font-weight: bold;
-    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
-
-.membership-link:hover {
+.cta-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-    background: #f8f9ff;
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
 }
 
-.membership-link i {
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
+/* Responsive Design */
+@media (max-width: 900px) {
+    .benefits-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .membership-hero h1 {
+        font-size: 2.1em;
+    }
+    .benefits-section h2,
+    .membership-info h2,
+    .cta-section h2 {
+        font-size: 1.3em;
+    }
+    .benefits-cards {
+        grid-template-columns: 1fr;
+    }
+    .hero-content {
+        padding: 0 5px;
+    }
 }

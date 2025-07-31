@@ -101,7 +101,7 @@ ul {
 }
 
 .footer-col h4 {
-    font-size: 1.5em;
+    font-size: 1.7em;
     color: white;
     text-transform: capitalize;
     margin-bottom: 35px;
@@ -128,25 +128,41 @@ ul {
 .footer-col:first-child {
     font-weight: bold;
     font-family: 'Source Sans 3', sans-serif;
-    font-weight: 800;
+    font-weight: 500;
+    color: white;
 }
 
 .footer-col ul li a {
-    font-size: 18px;
+    font-size: 1.5em;
     text-transform: capitalize;
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    display: block;
+    display: inline-block;
     transition: all 0.3s ease;
-    font-family: 'Source Sans 3', bebasneue;
-    font-weight: 900;
+    font-family: bebasneue;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
 }
 
 .footer-col ul li a:hover{
 	color: #ffffff;
-	padding-left: 7px;
     font-weight: bold;
+}
+
+.footer-col ul li a:hover::after {
+    width: 100%;
 }
 
 .footer-col .socialicons a {

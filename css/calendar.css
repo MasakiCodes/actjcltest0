@@ -1,60 +1,103 @@
+@font-face {
+    font-family: bebasneue;
+    src: url(../assets/font-files/BebasNeue-Regular.ttf);
+}
+
 .title {
-    margin-bottom: 50px;
-    font-family: 'Bebas Neue';
+    margin-bottom: 24px;
     text-align: center;
-    padding-top: 50px;
-    font-size: 3rem;
+    padding-top: 24px;
+    font-size: 4rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #2d3a5a;
+    font-family: bebasneue;
+}
+
+body {
+    background: linear-gradient(135deg, #e3e9f7 0%, #f9f9f9 100%);
 }
 
 .calendar-container {
-    padding: 16px;
+    padding: 12px 8px;
     margin: 0 auto;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    max-width: 1000px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(99, 135, 212, 0.10);
+    background-color: #eaf0fb;
 }
 
 .month-header {
     color: #fff;
-    border-radius: 5px;
-    background-color: #444444;
-    font-size: 1.2rem;
-    padding: 12px 16px;
-    margin-bottom: 8px;
+    border-radius: 8px 8px 0 0;
+    font-size: 1.3rem;
+    padding: 14px 20px;
+    margin-bottom: 0;
+    background: linear-gradient(90deg, #6387d4 60%, #4e9ad6 100%);
+    /* A single, more colorful blue gradient for all months */
 }
 
 .month-content {
-    padding: 16px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
-}
-
-.event-title {
-    font-weight: bold;
+    padding: 16px 12px 8px 12px;
+    background-color: #f7faff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 6px rgba(99, 135, 212, 0.08);
+    margin-bottom: 20px;
 }
 
 .event {
-    background: #fefefe;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #f0f6ff;
+    box-shadow: 0 2px 8px rgba(99, 135, 212, 0.08);
     border-radius: 8px;
-    margin-bottom: 12px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    padding: 12px;
-    border-left: 4px solid #4ecc14;
+    margin-bottom: 10px;
+    transition: transform 0.18s, box-shadow 0.18s;
+    padding: 14px 16px 10px 16px;
+    border-left: 6px solid #4e9ad6;
+    position: relative;
 }
 
 .event:hover {
-    transform: scale(1.02);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: scale(1.015);
+    box-shadow: 0 4px 12px rgba(99, 135, 212, 0.15);
+    background: #e0edfa;
 }
 
 .event-title {
     font-weight: bold;
+    color: #2d3a5a;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
 }
 
-.event-link {
-    text-decoration: none;
+.event-date {
+    color: #6387d4;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.event-link a {
+    color: #6387d4; /* Match event-date color */
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+@media (max-width: 700px) {
+    .calendar-container {
+        max-width: 98vw;
+        padding: 4px;
+    }
+    .month-header {
+        font-size: 1.1rem;
+        padding: 10px 8px;
+    }
+    .month-content {
+        padding: 8px 4px 4px 4px;
+    }
+    .event {
+        padding: 10px 8px 8px 8px;
+    }
+    .title {
+        font-size: 1.5rem;
+        padding-top: 12px;
+    }
 }

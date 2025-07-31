@@ -9,6 +9,10 @@
 
 
 
+body {
+    background: linear-gradient(135deg, #e3e9f7 0%, #f9f9f9 100%);
+}
+
 .banner {
     width: 100%;
     height: 100vh;
@@ -22,7 +26,7 @@
     transform: translateY(-50%);
     text-align: center;
     color: white;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: bebasneue;
     font-weight: bold;
     font-size: 4em;
     margin-top: 30px;
@@ -36,77 +40,131 @@
     margin-right: 30px;
 }
 
+/* Add the bebasneue font for consistency */
+@font-face {
+    font-family: bebasneue;
+    src: url(../assets/font-files/BebasNeue-Regular.ttf);
+}
+
 .upcomingcompetitions {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-    font-family: system-ui, sans-serif;
+    font-family: bebasneue;
     padding-top: 20px;
+    font-size: 3rem;
+    color: #2d3a5a;
+    font-weight: bold;
 }
+
 
 .completedcompetitions {
     margin-top: 70px;
     padding-top: 20px;
-    font-family: system-ui, sans-serif;
+    font-family: bebasneue;
+    font-size: 3rem;
+    color: #2d3a5a;
+    text-align: center;
+    font-weight: bold;
 }
 
 .blog {
-    padding: 20px;
-    background: #f9f9f9;
+    padding: 32px;
+    margin: 0 auto;
+    max-width: 1100px;
+    background-color: #eaf0fb;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(99, 135, 212, 0.10);
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .blog h2 {
     text-align: center;
-    font-size: 28px;
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.blog-post {
-    background: white;
-    border: 1px solid #ddd;
+/* Search input styling to match the design */
+.blog input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0edfa;
     border-radius: 8px;
-    margin: 20px 0;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease-in-out;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: #f7faff;
+    color: #2d3a5a;
+    transition: border-color 0.2s ease;
+}
+
+.blog input[type="text"]:focus {
+    outline: none;
+    border-color: #4e9ad6;
+    box-shadow: 0 0 0 3px rgba(78, 154, 214, 0.1);
+}
+
+.blog input[type="text"]::placeholder {
+    color: #6387d4;
+}
+
+.blog-post {
+    background: #f0f6ff;
+    border: none;
+    border-left: 6px solid #4e9ad6;
+    border-radius: 10px;
+    margin: 8px 0;
+    padding: 14px 16px 10px 16px;
+    box-shadow: 0 2px 8px rgba(99, 135, 212, 0.08);
+    transition: transform 0.18s, box-shadow 0.18s;
+    position: relative;
 }
 
 .blog-post h3 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #2d3a5a;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .blog-post p {
     color: #555;
     line-height: 1.6;
+    margin-bottom: 4px;
+}
+
+.blog-post a {
+    color: #6387d4;
+    text-decoration: underline;
+    font-weight: 500;
 }
 
 .blog-post:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.015);
+    box-shadow: 0 4px 12px rgba(99, 135, 212, 0.15);
+    background: #e0edfa;
 }
-
-.features h2 {
-    text-align: center;
-    font-size: 28px;
-    font-family: system-ui, sans-serif;
-}
-
 
 .features {
-    padding: 40px 20px;
-    background: #f9f9f9;
-    text-align: center;
+    padding: 32px;
+    margin: 0 auto;
+    max-width: 1400px;
+    background-color: #eaf0fb;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(99, 135, 212, 0.10);
     margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .features h2 {
-    font-size: 28px;
+    font-size: 3rem;
+    text-align: center;
+    color: #2d3a5a;
+    font-family: bebasneue;
+    margin-top: 30px;
     margin-bottom: 30px;
-    color: #333;
+    font-weight: bold;
 }
 
 .feature-grid {
@@ -117,38 +175,41 @@
 }
 
 .feature {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #f0f6ff;
+    border: none;
+    border-left: 6px solid #4e9ad6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(99, 135, 212, 0.08);
     padding: 20px;
     width: calc(25% - 20px);
     min-width: 250px;
     text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    transition: transform 0.18s, box-shadow 0.18s;
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
     display: flex;
+    position: relative;
 }
 
-
 .feature:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.015);
+    box-shadow: 0 4px 12px rgba(99, 135, 212, 0.15);
+    background: #e0edfa;
 }
 
 .feature i {
     font-size: 40px;
-    color: #615aeb;
+    color: #6387d4;
     margin-bottom: 15px;
     text-align: center;
 }
 
 .feature h3 {
-    font-size: 20px;
-    color: #333;
+    font-size: 1.1rem;
+    color: #2d3a5a;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .feature p {
@@ -166,4 +227,38 @@
         font-size: 30px;
     }
     
+}
+
+@media (max-width: 700px) {
+    .blog,
+    .features {
+        max-width: 98vw;
+        padding: 16px;
+        margin: 20px 8px;
+    }
+    
+    .upcomingcompetitions,
+    .completedcompetitions,
+    .features h2 {
+        font-size: 2rem;
+    }
+    
+    .blog-post,
+    .feature {
+        padding: 10px 8px 8px 8px;
+    }
+    
+    .blog input[type="text"] {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .feature-grid {
+        gap: 10px;
+    }
+    
+    .feature {
+        width: calc(50% - 10px);
+        min-width: 200px;
+    }
 }
